@@ -1,0 +1,18 @@
+## Evitar listar directorios
+Options -Indexes
+
+# Activar el motor de reescritura
+RewriteEngine On
+
+# Asegúrate de que se pueda acceder a archivos CSS, JS e imágenes
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Reescribir URLs para el backend
+RewriteRule ^([-a-zA-Z0-9]+)$ index.php?ruta=$1 [L]
+
+# Reescribir URLs para la API REST
+RewriteRule ^ap/(.*)$ index.php [QSA,L]
+
+# Si no se cumplen las condiciones anteriores, redirigir a index.php
+RewriteRule ^ index.php [QSA,L]
