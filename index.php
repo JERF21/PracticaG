@@ -39,6 +39,8 @@ require_once "modeloV/prestamoModelo.php";
 require_once "modeloV/productoModelo.php";
 
 
+echo "prueba conflicto";
+
 $plantilla=new ControladorPlantillaV();
 $plantilla->ctrPlantilla();
 
